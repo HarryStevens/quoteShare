@@ -19,7 +19,7 @@ Include jQuery and Font Awesome in your html file, like so:
 
 ### Usage
 
-***First***, download quoteShare.js from this GitHub repository and include it in your html file. Be sure to place it below where you have included jQuery, like so:
+***First***, download <a href="https://github.com/HarryStevens/quoteShare/blob/master/quoteShare.js">quoteShare.js</a> or <a href="https://github.com/HarryStevens/quoteShare/blob/master/quoteShare.min.js">quoteShare.min.js</a> from this GitHub repository and include it in your html file. Be sure to place it below where you have included jQuery, like so:
 
 ```
 <!-- jQuery -->
@@ -38,7 +38,7 @@ $(document).ready(function(){
 </script>
 ```
 
-There is no third; it's that easy to use. See the example provided in this GitHub repository for help.
+There is no third; it's that easy to use. See the <a href="https://github.com/HarryStevens/quoteShare/tree/master/example">example provided in this GitHub repository</a> for help.
 
 
 
