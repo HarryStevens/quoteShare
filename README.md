@@ -5,6 +5,7 @@
 ### Dependencies
 
 **jQuery** - You can link to a CDN of the latest version at <a href="https://developers.google.com/speed/libraries/#jquery">Google's Hosted Libraries page</a>.
+
 **Font Awesome** - Download the latest version <a href="https://fortawesome.github.io/Font-Awesome/">from Font Awesome's website</a>. (NOTE: To use Font Awesome, include the /fonts/ directory in your project.)
 
 Include jQuery and Font Awesome in your html file, like so:
