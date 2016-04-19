@@ -2,6 +2,14 @@
 
 ## quoteShare.js is a jQuery plugin that lets users share highlighted text on Twitter.
 
+### Menu
+
+<a href="https://github.com/HarryStevens/quoteShare#dependencies">Dependencies</a>
+
+<a href="https://github.com/HarryStevens/quoteShare#usage">Usage</a>
+
+<a href="https://github.com/HarryStevens/quoteShare#options">Options</a>
+
 ### Dependencies
 
 **jQuery** - You can link to a CDN of the latest version at <a href="https://developers.google.com/speed/libraries/#jquery">Google's Hosted Libraries page</a>.
