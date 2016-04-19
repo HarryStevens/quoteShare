@@ -6,7 +6,7 @@
 				backgroundColor : '#55acee',
 				birdColor : '#ffffff',
 				minLength : 1,
-				maxLength : 112,
+				maxLength : 114,
 				shareIcon : '<i class="fa fa-twitter-square" style="margin-top:-2px" aria-hidden="true"></i>',
 				size : 24
 			}, options);
@@ -59,7 +59,7 @@
 
 				if (len > settings.minLength && len < settings.maxLength && (text != history[historyLength - 2]) && selection.type == "Range") {
 					$('#qs-popup').css(showPopup).addClass('qs-popup-shown').removeClass('qs-popup-hidden');
-					var shareURL = 'http://twitter.com/share?&amp;text="' + text + '" — ' + url;
+					var shareURL = 'http://twitter.com/share?&amp;text="' + text + '" ' + url;
 					$('a.qs-sharelink').attr('onclick', "popUp=window.open('" + shareURL + "','popupwindow','scrollbars=yes,width=600,height=250');popUp.focus();return false");
 				} else {
 					$('#qs-popup').css(hidePopup).addClass('qs-popup-hidden').removeClass('qs-popup-shown');
