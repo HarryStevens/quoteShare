@@ -54,7 +54,7 @@ There is no third; it's that easy to use. See the <a href="https://github.com/Ha
 
 ### Options
 
-The `quoteShare()` method accepts five options, enabling you to customize when and how your share button displays on the page.
+The `quoteShare()` method accepts options, enabling you to customize when and how your share button displays on the page.
 
 | Option        | Date Type     | Default  | Description |
 | ------------- |-------------| ---|---|
