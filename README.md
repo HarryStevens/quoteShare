@@ -11,7 +11,7 @@
 Include jQuery and Font Awesome in your html file, like so:
 
 ```html
-<!-- Font Awesome —>
+<!-- Font Awesome -->
 <link rel="stylesheet" href="css/font-awesome.min.css" /> 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
