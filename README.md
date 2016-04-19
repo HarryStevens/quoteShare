@@ -53,7 +53,7 @@ The `quoteShare()` method accepts five options, enabling you to customize when a
 | birdColor      | string | '#ffffff' | The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted. |
 | minLength      | number      |  1 | The minimum number of characters that must be highlighted for the share icon to appear. |
 | maxLength      | number      |  112 | The maximum number of characters that must be highlighted for the share icon to appear. Default is 112 because shortened links require 23 characters, and quoteShare adds two quotes, two spaces and a dash to the highlighted text (112+23+2+2+1=140). |
-| shareIcon | string      |  '<i class="fa fa-twitter-square" style="margin-top:-2px" aria-hidden="true"></i>' | The icon that appears next to the highlighted text. Default is Font Awesome's Twitter icon. You can add your own HTML, including images or other icons. |
+| shareIcon | string      |  '...' | The icon that appears next to the highlighted text. Default is Font Awesome's Twitter icon. You can add your own HTML, including images or other icons. |
 | size | number  |  24 | The size of the Twitter icon, in pixels. |
 
 
