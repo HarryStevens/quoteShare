@@ -1,7 +1,5 @@
 ( function($) {
 
-		var thisArray = [];
-
 		$.fn.quoteShare = function(options) {
 
 			return this.each(function() {
@@ -9,8 +7,6 @@
 				var unique = $(this).context.offsetTop;
 
 				var id = 'qs-popup-' + unique;
-
-				console.log(id);
 
 				//some variables to be used later
 				var history = [];
