@@ -15,7 +15,6 @@
 				//some variables to be used later
 				var history = [];
 				var text = "";
-				var url = window.location.href;
 
 				//options
 				var settings = $.extend({
@@ -43,8 +42,8 @@
 					'border-radius' : (settings.size) / 4.5,
 				});
 
-				$('#' + id).append('<a class="qs-sharelink qs-sharelink-'+unique+'">' + settings.shareIcon + '</a>');
-				$("a.qs-sharelink-"+unique).css({
+				$('#' + id).append('<a class="qs-sharelink qs-sharelink-' + unique + '">' + settings.shareIcon + '</a>');
+				$("a.qs-sharelink-" + unique).css({
 					'color' : settings.backgroundColor,
 					'cursor' : 'pointer',
 				});
@@ -68,7 +67,7 @@
 
 					if (len > settings.minLength && len < settings.maxLength && (text != history[historyLength - 2]) && selection.type == "Range") {
 						$('#' + id).css(showPopup).addClass('qs-popup-shown').removeClass('qs-popup-hidden');
-						var shareURL = 'http://twitter.com/share?&amp;text="' + text + '" ' + url;
+						var shareURL = 'http://twitter.com/share?&amp;text="' + text + '" ';
 						$('a.qs-sharelink').attr('onclick', "popUp=window.open('" + shareURL + "','popupwindow','scrollbars=yes,width=600,height=250');popUp.focus();return false");
 					} else {
 						$('#' + id).css(hidePopup).addClass('qs-popup-hidden').removeClass('qs-popup-shown');
@@ -83,7 +82,10 @@
 				$('body').mousedown(function() {
 
 					if ($('#' + id).hasClass('qs-popup-shown')) {
-						$('#' + id).css(hidePopup).removeClass('qs-popup-shown').addClass('qs-popup-hidden');
+						setTimeout(function() {
+							$('#' + id).css(hidePopup).removeClass('qs-popup-shown').addClass('qs-popup-hidden');
+						}, 200);
+
 					}
 				});
 
