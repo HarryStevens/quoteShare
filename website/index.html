@@ -1,8 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
 		<title>quoteShare.js</title>
 		<link rel="icon" type="image/ico" href="img/favicon.ico">
 
@@ -35,7 +37,7 @@
 
 	</head>
 	<body>
-		<a href="https://github.com/HarryStevens/quoteShare"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100000;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+		<a href="https://github.com/HarryStevens/quoteShare"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 100000;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
@@ -121,7 +123,8 @@
 $(document).ready(function(){
 	$('p').quoteShare();
 });
-&lt;/script&gt;</code></pre>																																																																													
+&lt;/script&gt;</code></pre>																																																																																		
+
 
 				</div>
 			</div>
@@ -133,7 +136,9 @@ $(document).ready(function(){
 				<div class="container">
 
 					<p>
-						The <code class="language-javascript">quoteShare()</code> method accepts options, enabling you to customize when and how your share button displays on the page.
+						The <code class="language-javascript">
+							quoteShare()</code>
+						method accepts options, enabling you to customize when and how your share button displays on the page.
 					</p>
 					<table class="table table-bordered table-striped">
 						<thead>
@@ -197,9 +202,9 @@ $(document).ready(function(){
 						In its simplest form, quoteShare is a jQuery method that requires no options. Execute it on the element you wish to make shareable.
 					</p>
 					<pre><code class="language-javascript">$('.example-1').quoteShare();</code></pre>
-					<p class="example-1">
+					<blockquote class="example-1">
 						DEMO: You can highlight this text to share it with quoteShare.
-					</p>
+					</blockquote>
 					<h3>Example 2 - Custom styling</h3>
 					<p>
 						quoteShare also lets you pass options to change the share icon's size and color.
@@ -209,9 +214,9 @@ $(document).ready(function(){
 	birdColor : 'green',
 	size : 40
 });</code></pre>
-					<p class="example-2">
+					<blockquote class="example-2">
 						DEMO: When you highlight this text, the share icon is larger and appears orange and green.
-					</p>
+					</blockquote>
 					<h3>Example 3 - Minimum and maximum highlight length</h3>
 					<p>
 						By default, quoteShare will only share highlighted text that is longer than one character and shorter than 114 characters. However, quoteShare provides options to customize this.
@@ -220,9 +225,9 @@ $(document).ready(function(){
 	minLength : 20,
 	maxLength : 40
 });</code></pre>
-					<p class="example-3">
+					<blockquote class="example-3">
 						DEMO: You can only share highlighted text in this paragraph that is between 20 and 40 characters long.
-					</p>
+					</blockquote>
 					<h3>Example 4 - Change the share icon</h3>
 					<p>
 						You can change the icon that displays after shareable text is highlighted.
@@ -230,9 +235,9 @@ $(document).ready(function(){
 					<pre><code class="language-javascript">$('.example-4').quoteShare({
 	shareIcon : '&lt;img src="img/smiley.png"&gt;'
 });</code></pre>
-					<p class="example-4">
+					<blockquote class="example-4">
 						DEMO: When you highlight this text, a smiley face icon will appear.
-					</p>
+					</blockquote>
 				</div>
 			</div>
 		</div>
