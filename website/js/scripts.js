@@ -19,7 +19,7 @@ $(document).ready(function() {
 	});
 
 	$('.example-4').quoteShare({
-		shareIcon : '<img src="img/smiley.png">',
+		shareIcon : '<img src="img/smiley.png">'
 	});
 
 	//other functions
