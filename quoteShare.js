@@ -35,7 +35,7 @@
 					'font-size' : settings.size,
 					'height' : settings.size - ((settings.size) / 4.5),
 					'width' : settings.size - ((settings.size) / 5.5),
-					'border-radius' : (settings.size) / 4.5,
+					'border-radius' : '50%'
 				});
 
 				$('#' + id).append('<a class="qs-sharelink qs-sharelink-' + unique + '">' + settings.shareIcon + '</a>');
@@ -44,7 +44,7 @@
 					'cursor' : 'pointer',
 				});
 				$('#' + id).css(hidePopup).addClass('qs-popup-hidden').removeClass('qs-popup-shown');
-				$('.share-icon').css('margin-top', -((settings.size) / 12.25));
+				$('.share-icon').css('margin-top', '-3px');
 
 				$(this).mouseup(function(e) {
 

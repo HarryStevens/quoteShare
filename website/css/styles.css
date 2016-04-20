@@ -1,0 +1,48 @@
+body {
+	padding-top: 50px;
+	font-size: 16px;
+}
+h1 {
+	margin-bottom: 40px;
+}
+.section-head {
+	padding-top: 20px;
+	padding-bottom: 2px;
+	font-size: 40px;
+	background: #d9534f;
+	color: #eee;
+}
+#home {
+	height: 0px;
+}
+.intro {
+	background: #76c4ae;
+	margin-top: 0px !important;
+}
+a.navbar-brand {
+	color: #d9534f !important;
+	font-size: 1.2em;
+}
+.hometron {
+	height: 400px;
+	padding: 60px 15px;
+	text-align: center;
+	margin-top: 100px;
+}
+.hometron h1 {
+	margin-bottom: 40px;
+}
+.hometron p {
+	margin-bottom: 40px;
+}
+.page-height {
+	min-height: 100vh;
+	margin-top: 40px;
+}
+thead, .table-striped > tbody > tr:nth-of-type(even) {
+	background: #fff;
+}
+.navbar-inverse .navbar-nav>li>a:active,.navbar-inverse .navbar-nav>li>a:focus {
+	color: #9d9d9d;
+}
+

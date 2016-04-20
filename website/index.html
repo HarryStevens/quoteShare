@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>quoteShare.js</title>
+		<link rel="icon" type="image/ico" href="img/favicon.ico">
+
+		<!-- meta tags -->
+		<meta name="description" content="quoteShare.js is a jQuery plugin that lets users share highlighted text on Twitter." />
+		<meta name="keywords" content="quoteShare, jQuery plugin, Twitter, quote sharing, javascript" />
+		<link rel="canonical" content="http://harryjstevens.com/quotesharejs/" />
+
+		<meta property="og:description" content="quoteShare.js is a jQuery plugin that lets users share highlighted text on Twitter." />
+		<meta property="og:site_name" content="quoteShare.js" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="quoteShare.js" />
+		<meta property="og:url" content="http://harryjstevens.com/quotesharejs/" />
+		<meta property="og:image" content="img/share.png" />
+		<meta property="og:image:type" content="img/png" />
+		<meta property="og:type" content="website" />
+
+		<meta name="twitter:card" content="quoteShare.js is a jQuery plugin that lets users share highlighted text on Twitter." />
+		<meta name="twitter:site" content="@harry_stevens" />
+		<meta name="twitter:title" content="quoteShare.js" />
+		<meta name="twitter:image:src" content="img/share.png" />
+
+		<meta name="author" content="Harry Stevens" />
+
+		<!-- css -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/prism.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+
+	</head>
+	<body>
+		<a href="https://github.com/HarryStevens/quoteShare"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100000;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#home">quoteShare.js</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#usage">Getting started</a>
+						</li>
+						<li>
+							<a href="#options">Options</a>
+						</li>
+						<li>
+							<a href="#examples">Examples</a>
+						</li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<div style="margin-bottom:40px;">
+			<div id="home">
+				&nbsp;
+			</div>
+			<div class="page-height intro">
+				<div class="container">
+					<div class="jumbotron hometron">
+						<h1>quoteShare.js</h1>
+						<p class="lead">
+							quoteShare.js is a jQuery plugin that lets users share highlighted text on Twitter.
+							<br>
+							Highlight some of this text to see it in action.
+						</p>
+						<a href="#usage">
+						<button type="button" class="btn btn-danger btn-lg">
+							Get started &#187;
+						</button></a>
+					</div>
+				</div>
+			</div>
+
+			<div id="usage" class="page-height">
+				<div class="section-head" style="margin-top: -40px;">
+					<h1 class="container">Getting Started</h1>
+				</div>
+				<div class="container">
+
+					<h3>Dependencies</h3>
+					<p>
+						<strong>jQuery</strong> - You can link to a CDN of the latest version at <a href="https://developers.google.com/speed/libraries/#jquery">Google's Hosted Libraries page</a>.
+					<p>
+						<strong>Font Awesome</strong> - Download the latest version <a href="https://fortawesome.github.io/Font-Awesome/">from Font Awesome's website</a>.
+					<p>
+						Include jQuery and Font Awesome in your html file, like so:
+					</p>
+					<pre><code class="language-html">&lt;!-- Font Awesome --&gt;
+&lt;link rel="stylesheet" href="css/font-awesome.min.css" /&gt;
+&lt;!-- jQuery --&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+					<p>
+						NOTE: To use Font Awesome, also include the /fonts/ directory in your project.
+					</p>
+					<h3>Usage</h3>
+					<p>
+						<strong>First</strong>, download <a href="https://github.com/HarryStevens/quoteShare/blob/master/quoteShare.js">quoteShare.js</a> or <a href="https://github.com/HarryStevens/quoteShare/blob/master/quoteShare.min.js">quoteShare.min.js</a> from <a href="https://github.com/HarryStevens/quoteShare">this GitHub repository</a> and include it in your html file. Be sure to place it below where you have included jQuery, like so:
+					</p>
+					<pre><code class="language-html">&lt;!-- jQuery --&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;!-- quoteShare.js --&gt;
+&lt;script src="js/quoteShare.js"&gt;&lt;/script&gt;</code></pre>
+					<p>
+						<strong>Second</strong>, use the quoteShare method on the selector of your choice. For example:
+					</p>
+					<pre><code class="language-html">&lt;script&gt;
+$(document).ready(function(){
+	$('p').quoteShare();
+});
+&lt;/script&gt;</code></pre>																																																																													
+
+				</div>
+			</div>
+
+			<div id="options" class="page-height">
+				<div class="section-head" style="margin-bottom: 40px;">
+					<h1 class="container">Options</h1>
+				</div>
+				<div class="container">
+
+					<p>
+						The <code class="language-javascript">quoteShare()</code> method accepts options, enabling you to customize when and how your share button displays on the page.
+					</p>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Option</th>
+								<th>Date Type</th>
+								<th>Default</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>backgroundColor</td>
+								<td>string</td>
+								<td>'#55acee'</td>
+								<td>The color of the background of the Twitter icon. Default is Twitter's blue. Hex, RGB, and other color codes are accepted.</td>
+							</tr>
+							<tr>
+								<td>birdColor</td>
+								<td>string</td>
+								<td>'#ffffff'</td>
+								<td>The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted.</td>
+							</tr>
+							<tr>
+								<td>maxLength</td>
+								<td>number</td>
+								<td>112</td>
+								<td>The maximum number of characters that must be highlighted for the share icon to appear. Default is 112 because shortened links require 23 characters, and quoteShare adds two quotes, two spaces and a dash to the highlighted text (112+23+2+2+1=140).</td>
+							</tr>
+							<tr>
+								<td>minLength</td>
+								<td>number</td>
+								<td>1</td>
+								<td>The minimum number of characters that must be highlighted for the share icon to appear.</td>
+							</tr>
+							<tr>
+								<td>shareIcon</td>
+								<td>string</td>
+								<td>'...'</td>
+								<td>The icon that appears next to the highlighted text. Default is Font Awesome's Twitter icon. You can add your own HTML, including images or other icons.</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>number</td>
+								<td>24</td>
+								<td>The size of the Twitter icon, in pixels.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div id="examples" class="page-height">
+				<div class="section-head">
+					<h1 class="container">Examples</h1>
+				</div>
+				<div class="container">
+
+					<h3>Example 1 - Basic usage</h3>
+					<p>
+						In its simplest form, quoteShare is a jQuery method that requires no options. Execute it on the element you wish to make shareable.
+					</p>
+					<pre><code class="language-javascript">$('.example-1').quoteShare();</code></pre>
+					<p class="example-1">
+						DEMO: You can highlight this text to share it with quoteShare.
+					</p>
+					<h3>Example 2 - Custom styling</h3>
+					<p>
+						quoteShare also lets you pass options to change the share icon's size and color.
+					</p>
+					<pre><code class="language-javascript">$('.example-2').quoteShare({
+	backgroundColor : 'orange',
+	birdColor : 'green',
+	size : 40
+});</code></pre>
+					<p class="example-2">
+						DEMO: When you highlight this text, the share icon is larger and appears orange and green.
+					</p>
+					<h3>Example 3 - Minimum and maximum highlight length</h3>
+					<p>
+						By default, quoteShare will only share highlighted text that is longer than one character and shorter than 114 characters. However, quoteShare provides options to customize this.
+					</p>
+					<pre><code class="language-javascript">$('.example-3').quoteShare({
+	minLength : 20,
+	maxLength : 40
+});</code></pre>
+					<p class="example-3">
+						DEMO: You can only share highlighted text in this paragraph that is between 20 and 40 characters long.
+					</p>
+					<h3>Example 4 - Change the share icon</h3>
+					<p>
+						You can change the icon that displays after shareable text is highlighted.
+					</p>
+					<pre><code class="language-javascript">$('.example-4').quoteShare({
+	shareIcon : '&lt;img src="img/smiley.png"&gt;',
+});</code></pre>
+					<p class="example-4">
+						DEMO: When you highlight this text, a smiley face icon will appear.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-inverse" style="margin-bottom:0px;border-radius: 0px;">
+			<div class="container" style="padding-top: 13px;color: #aaa;">
+				quoteShare.js is free and open source software. You can use it as you please or <a href="https://github.com/HarryStevens/quoteShare">fork it on GitHub</a>. Created by <a href="http://twitter.com/Harry_Stevens">Harry Stevens</a>.
+			</div>
+		</nav>
+
+		<!-- js -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/prism.js"></script>
+		<script src="js/quoteShare.min.js"></script>
+		<script src="js/scripts.js"></script>
+
+	</body>
+</html>
+
