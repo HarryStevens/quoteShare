@@ -43,7 +43,7 @@ a.navbar-brand {
 thead, .table-striped > tbody > tr:nth-of-type(even) {
 	background: #fff;
 }
-.navbar-inverse .navbar-nav>li>a:active,.navbar-inverse .navbar-nav>li>a:focus {
-	color: #9d9d9d;
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-nav>li>a:active,.navbar-inverse .navbar-nav>li>a:focus {
+	color: #ddd;
 }
 
