@@ -33,28 +33,15 @@ $(document).ready(function() {
 			'scrollTop' : ($target.offset().top) - 40
 		}, 900, 'swing');
 	});
-
-	/*
-	 $('li a').click(function() {
-	 $('.nav li').removeClass('active');
-	 $($(this).parent()).addClass('active');
-	 });
-
-	 $('.hometron button').click(function() {
-	 $('.nav li').removeClass('active');
-	 $('.nav li:nth-of-type(1)').addClass('active');
-	 });
-
-	 $('a.navbar-brand').click(function() {
-	 $('.nav li').removeClass('active');
-	 });*/
+	
+	var offset = 41;
 
 	var waypointHome = new Waypoint({
 		element : $('#home'),
 		handler : function() {
 			$('.nav li').removeClass('active');
 		},
-		offset : 40
+		offset : offset
 	});
 	var waypointUsage = new Waypoint({
 		element : $('#usage'),
@@ -62,7 +49,7 @@ $(document).ready(function() {
 			$('.nav li').removeClass('active');
 			$('.nav li:nth-of-type(1)').addClass('active');
 		},
-		offset : 40
+		offset : offset
 	});
 	var waypointOptions = new Waypoint({
 		element : $('#options'),
@@ -70,15 +57,15 @@ $(document).ready(function() {
 			$('.nav li').removeClass('active');
 			$('.nav li:nth-of-type(2)').addClass('active');
 		},
-		offset : 40
+		offset : offset
 	});
-	var waypointUsage = new Waypoint({
+	var waypointExamples = new Waypoint({
 		element : $('#examples'),
 		handler : function() {
 			$('.nav li').removeClass('active');
 			$('.nav li:nth-of-type(3)').addClass('active');
 		},
-		offset : 40
+		offset : offset
 	});
 
 });
