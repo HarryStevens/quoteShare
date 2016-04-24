@@ -44,7 +44,10 @@
 					'cursor' : 'pointer',
 				});
 				$('#' + id).css(hidePopup).addClass('qs-popup-hidden').removeClass('qs-popup-shown');
-				$('.share-icon').css('margin-top', '-3px');
+				$('.share-icon').css({
+					'margin-top' : '-3px',
+					'position' : 'absolute'
+				});
 
 				$(this).mouseup(function(e) {
 
