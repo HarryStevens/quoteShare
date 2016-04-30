@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -155,38 +154,44 @@ $(document).ready(function(){
 							<tr>
 								<td>backgroundColor</td>
 								<td>string</td>
-								<td>'#55acee'</td>
+								<td><code>'#55acee'</code></td>
 								<td>The color of the background of the Twitter icon. Default is Twitter's blue. Hex, RGB, and other color codes are accepted.</td>
 							</tr>
 							<tr>
-								<td>birdColor</td>
-								<td>string</td>
-								<td>'#ffffff'</td>
-								<td>The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted.</td>
+								<td>boxShadow</td>
+								<td>boolean</td>
+								<td><code>true</code></td>
+								<td>A shadow that appears below the menu. Set to false to disable.</td>
 							</tr>
 							<tr>
 								<td>maxLength</td>
 								<td>number</td>
-								<td>114</td>
-								<td>The maximum number of characters that must be highlighted for the share icon to appear. Default is 114 because shortened links require 23 characters, and quoteShare adds two quotes, two spaces and a dash to the highlighted text (112+23+2+2+1=140).</td>
+								<td><code>114</td>
+								<td>The maximum number of characters that must be highlighted for the share icon to appear. Useful if you want to add hashtags or a source to the tweet.</td>
 							</tr>
 							<tr>
 								<td>minLength</td>
 								<td>number</td>
-								<td>1</td>
+								<td><code>1</code></td>
 								<td>The minimum number of characters that must be highlighted for the share icon to appear.</td>
 							</tr>
 							<tr>
-								<td>shareIcon</td>
+								<td>twitterColor</td>
 								<td>string</td>
-								<td>'...'</td>
-								<td>The icon that appears next to the highlighted text. Default is Font Awesome's Twitter icon. You can add your own HTML, including images or other icons.</td>
+								<td><code>'#ffffff'</code></td>
+								<td>The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted.</td>
 							</tr>
 							<tr>
-								<td>size</td>
-								<td>number</td>
-								<td>24</td>
-								<td>The size of the Twitter icon, in pixels.</td>
+								<td>twitterHashtags</td>
+								<td>string</td>
+								<td><code>''</code></td>
+								<td>A comma separated list of hashtags that accompany the tweet.</td>
+							</tr>
+							<tr>
+								<td>twitterVia</td>
+								<td>string</td>
+								<td><code>''</code></td>
+								<td>A Twitter handle to accompany the tweet.</td>
 							</tr>
 						</tbody>
 					</table>
@@ -229,7 +234,7 @@ $(document).ready(function(){
 					<blockquote class="example-3">
 						DEMO: You can only share highlighted text in this paragraph that is between 20 and 40 characters long.
 					</blockquote>
-					<h3>Example 4 - Change the share icon</h3>
+					<h3>Example 4 - Remove the box shadow</h3>
 					<p>
 						You can remove the box shadow from the share menu.
 					</p>
@@ -238,6 +243,17 @@ $(document).ready(function(){
 });</code></pre>
 					<blockquote class="example-4">
 						DEMO: When you highlight this text, the popup will appear without a box shadow.
+					</blockquote>
+					<h3>Example 5 - Customize the tweet</h3>
+					<p>
+						You can add hashtags or a source Twitter handle to the tweet.  
+					</p>
+					<pre><code class="language-javascript">$('.example-5').quoteShare({
+	twitterHashtags : 'jQuery, Twitter',
+	twitterVia : 'Harry_Stevens'
+});</code></pre>
+					<blockquote class="example-5">
+						DEMO: When you share highlighted text from this paragraph, the tweet will include hashtags and a source.
 					</blockquote>
 				</div>
 			</div>

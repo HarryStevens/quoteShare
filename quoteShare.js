@@ -1,17 +1,17 @@
 /*
  * quoteShare.js
  * Copyright (c) 2016 Harry Stevens
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
- * to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
  * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
  * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * 
+ *
  */
 
 ( function($) {
@@ -30,11 +30,13 @@
 
 				//options
 				var settings = $.extend({
-					colorTwitter : '#ffffff',
 					background : '#262626',
 					minLength : 1,
 					maxLength : 114,
-					boxShadow : true
+					boxShadow : true,
+					twitterColor : '#ffffff',
+					twitterHashtags : '',
+					twitterVia : ''
 				}, options);
 
 				//create popup menus
@@ -68,7 +70,7 @@
 					'position' : 'absolute'
 				})
 				$("a.qs-twitter-" + unique).css({
-					'color' : settings.colorTwitter,
+					'color' : settings.twitterColor,
 				});
 
 				// position share icons
@@ -124,7 +126,21 @@
 					// conditions to show the popup
 					if (len > settings.minLength && len < settings.maxLength && (text != history[historyLength - 2]) && selection.type == "Range") {
 						$('#' + id).css(showPopup).addClass('qs-popup-shown').removeClass('qs-popup-hidden');
-						var shareTwitter = 'http://twitter.com/share?&amp;text="' + text + '" ';
+
+						var urlStart = 'http://twitter.com/share?text="' + text + '"';
+						var urlVia = '';
+						var urlHashtags = ''; 
+						var urlRelated = '';
+
+						if (settings.twitterVia != '') {
+							urlVia = '&amp;via=' + settings.twitterVia;
+						} 
+						if (settings.twitterHashtags != '') {
+							urlHashtags = '&amp;hashtags=' + settings.twitterHashtags;
+						}
+
+						var shareTwitter = urlStart.concat(urlVia, urlHashtags);
+
 						$('a.qs-twitter').attr('onclick', "popUp=window.open('" + shareTwitter + "','popupwindow','scrollbars=yes,width=600,height=250');popUp.focus();return false");
 					} else {
 						$('#' + id).css(hidePopup).addClass('qs-popup-hidden').removeClass('qs-popup-shown');

@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 	$('.example-2').quoteShare({
 		background : '#ffffff',
-		colorTwitter : '#55acee'
+		twitterColor : '#55acee'
 	});
 
 	$('.example-3').quoteShare({
@@ -17,7 +17,12 @@ $(document).ready(function() {
 	});
 
 	$('.example-4').quoteShare({
-		boxShadow : false
+		boxShadow : false,
+		twitterVia : 'Harry_Stevens'
+	});
+	$('.example-5').quoteShare({
+		twitterHashtags : 'jQuery, Twitter',
+		twitterVia : 'Harry_Stevens'
 	});
 
 	//other functions
@@ -66,4 +71,4 @@ $(document).ready(function() {
 		offset : offset
 	});
 
-}); 
+});

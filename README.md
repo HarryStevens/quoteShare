@@ -59,9 +59,13 @@ The `quoteShare()` method accepts options, enabling you to customize when and ho
 | Option        | Date Type     | Default  | Description |
 | ------------- |-------------| ---|---|
 | backgroundColor      | string | `'#262626'` | The background color of the popup menu. Default is off-black. Hex, RGB, and other color codes are accepted. |
-| colorTwitter      | string | `'#ffffff'` | The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted. |
-| maxLength      | number      |  `114` | The maximum number of characters that must be highlighted for the share icon to appear. Default is 114 because shortened links require 23 characters, and quoteShare adds two quotes and a space to the highlighted text (114+23+2+1=140). |
-| minLength      | number      |  `1` | The minimum number of characters that must be highlighted for the share icon to appear. |
 | boxShadow | boolean      |  `true` | A shadow that appears below the menu. Set to false to disable. |
+| maxLength      | number      |  `114` | The maximum number of characters that must be highlighted for the share icon to appear. Useful if you want to add hashtags or a source to the tweet. |
+| minLength      | number      |  `1` | The minimum number of characters that must be highlighted for the share icon to appear. |
+| twitterColor      | string | `'#ffffff'` | The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted. |
+| twitterHashtags      | string | `''` | A comma separated list of hashtags that accompany the tweet. |
+| twitterVia      | string | `''` | A Twitter handle to accompany the tweet. |
+
+
 
 
