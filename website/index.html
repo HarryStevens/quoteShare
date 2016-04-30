@@ -37,9 +37,7 @@
 
 	</head>
 	<body>
-		<a href="https://github.com/HarryStevens/quoteShare"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 100000;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
-
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-inverse navbar-fixed-top box-shadow-bottom">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -61,6 +59,9 @@
 						<li>
 							<a href="#examples">Examples</a>
 						</li>
+						<li>
+							<a href="https://github.com/HarryStevens/quoteShare">GitHub</a>
+						</li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
@@ -75,7 +76,7 @@
 					<div class="jumbotron hometron">
 						<h1>quoteShare.js</h1>
 						<p class="lead">
-							quoteShare.js is a jQuery plugin that lets users share highlighted text on Twitter.
+							quoteShare.js is a jQuery plugin that lets you share highlighted text on Twitter.
 							<br>
 							Highlight some of this text to see it in action.
 						</p>
@@ -123,7 +124,8 @@
 $(document).ready(function(){
 	$('p').quoteShare();
 });
-&lt;/script&gt;</code></pre>																																																																																		
+&lt;/script&gt;</code></pre>																																																																																							
+
 
 
 				</div>
@@ -136,15 +138,17 @@ $(document).ready(function(){
 				<div class="container">
 
 					<p>
-						The <code class="language-javascript">
-							quoteShare()</code>
+						The
+						<code class="language-javascript">
+							quoteShare()
+						</code>
 						method accepts options, enabling you to customize when and how your share button displays on the page.
 					</p>
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th>Option</th>
-								<th>Date Type</th>
+								<th>Data Type</th>
 								<th>Default</th>
 								<th>Description</th>
 							</tr>
@@ -153,38 +157,32 @@ $(document).ready(function(){
 							<tr>
 								<td>backgroundColor</td>
 								<td>string</td>
-								<td>'#55acee'</td>
-								<td>The color of the background of the Twitter icon. Default is Twitter's blue. Hex, RGB, and other color codes are accepted.</td>
+								<td><code>'#262626'</code></td>
+								<td>The background color of the popup menu. Default is off-black. Hex, RGB, and other color codes are accepted.</td>
 							</tr>
 							<tr>
-								<td>birdColor</td>
+								<td>colorTwitter</td>
 								<td>string</td>
-								<td>'#ffffff'</td>
+								<td><code style="background:#fff">'#ffffff'</code></td>
 								<td>The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted.</td>
 							</tr>
 							<tr>
 								<td>maxLength</td>
 								<td>number</td>
-								<td>112</td>
-								<td>The maximum number of characters that must be highlighted for the share icon to appear. Default is 112 because shortened links require 23 characters, and quoteShare adds two quotes, two spaces and a dash to the highlighted text (112+23+2+2+1=140).</td>
+								<td><code>114</code></td>
+								<td>The maximum number of characters that must be highlighted for the share icon to appear. Default is 114 because shortened links require 23 characters, and quoteShare adds two quotes, and a space to the highlighted text (114+23+2+1=140).</td>
 							</tr>
 							<tr>
 								<td>minLength</td>
 								<td>number</td>
-								<td>1</td>
+								<td><code style="background:#fff">1</code></td>
 								<td>The minimum number of characters that must be highlighted for the share icon to appear.</td>
 							</tr>
 							<tr>
-								<td>shareIcon</td>
-								<td>string</td>
-								<td>'...'</td>
-								<td>The icon that appears next to the highlighted text. Default is Font Awesome's Twitter icon. You can add your own HTML, including images or other icons.</td>
-							</tr>
-							<tr>
-								<td>size</td>
-								<td>number</td>
-								<td>24</td>
-								<td>The size of the Twitter icon, in pixels.</td>
+								<td>boxShadow</td>
+								<td>boolean</td>
+								<td><code>true</code></td>
+								<td>A shadow that appears below the menu. Set to <code>false</code> to disable.</td>
 							</tr>
 						</tbody>
 					</table>
@@ -207,15 +205,14 @@ $(document).ready(function(){
 					</blockquote>
 					<h3>Example 2 - Custom styling</h3>
 					<p>
-						quoteShare also lets you pass options to change the share icon's size and color.
+						quoteShare also lets you pass options to change the color of the share menu and icons.
 					</p>
 					<pre><code class="language-javascript">$('.example-2').quoteShare({
-	backgroundColor : 'orange',
-	birdColor : 'green',
-	size : 40
+	background: '#ffffff',
+	colorTwitter : '#55acee'
 });</code></pre>
 					<blockquote class="example-2">
-						DEMO: When you highlight this text, the share icon is larger and appears orange and green.
+						DEMO: When you highlight this text, the menu is white and the share icons are colored.
 					</blockquote>
 					<h3>Example 3 - Minimum and maximum highlight length</h3>
 					<p>
@@ -228,15 +225,15 @@ $(document).ready(function(){
 					<blockquote class="example-3">
 						DEMO: You can only share highlighted text in this paragraph that is between 20 and 40 characters long.
 					</blockquote>
-					<h3>Example 4 - Change the share icon</h3>
+					<h3>Example 4 - Box shadow</h3>
 					<p>
-						You can change the icon that displays after shareable text is highlighted.
+						You can remove the box shadow from the share menu.
 					</p>
 					<pre><code class="language-javascript">$('.example-4').quoteShare({
-	shareIcon : '&lt;img src="img/smiley.png"&gt;'
+	boxShadow : false
 });</code></pre>
 					<blockquote class="example-4">
-						DEMO: When you highlight this text, a smiley face icon will appear.
+						DEMO: When you highlight this text, the popup will appear without a box shadow.
 					</blockquote>
 				</div>
 			</div>
@@ -244,7 +241,7 @@ $(document).ready(function(){
 
 		<nav class="navbar navbar-inverse" style="margin-bottom:0px;border-radius: 0px;">
 			<div class="container" style="padding-top: 13px;color: #ddd;">
-				quoteShare.js is free and open source software. You can use it as you please or <a href="https://github.com/HarryStevens/quoteShare">fork it on GitHub</a>. Created by <a href="http://twitter.com/Harry_Stevens">Harry Stevens</a>.
+				quoteShare.js is free and open source software, licensed under the terms of <a href="https://opensource.org/licenses/MIT">the MIT License</a>. <a href="https://github.com/HarryStevens/quoteShare">Fork it on GitHub</a>. Created by <a href="http://twitter.com/Harry_Stevens">Harry Stevens</a>.
 			</div>
 		</nav>
 
@@ -253,7 +250,7 @@ $(document).ready(function(){
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="js/jquery.waypoints.min.js"></script>
 		<script src="js/prism.js"></script>
-		<script src="js/quoteShare.min.js"></script>
+		<script src="js/quoteShare.js"></script>
 		<script src="js/scripts.js"></script>
 
 	</body>

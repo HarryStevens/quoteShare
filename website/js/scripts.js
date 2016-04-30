@@ -8,9 +8,8 @@ $(document).ready(function() {
 	$('.example-1').quoteShare();
 
 	$('.example-2').quoteShare({
-		backgroundColor : 'orange',
-		birdColor : 'green',
-		size : 40
+		background: '#ffffff',
+		colorTwitter : '#55acee'
 	});
 
 	$('.example-3').quoteShare({
@@ -19,7 +18,7 @@ $(document).ready(function() {
 	});
 
 	$('.example-4').quoteShare({
-		shareIcon : '<img src="img/smiley.png">'
+		boxShadow : false
 	});
 
 	//other functions

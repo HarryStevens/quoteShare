@@ -50,7 +50,7 @@ $(document).ready(function(){
 </script>
 ```
 
-There is no third; it's that easy to use. See the <a href="https://github.com/HarryStevens/quoteShare/tree/master/example">example provided in this GitHub repository</a> for help.
+See the <a href="http://harryjstevens.com/quotesharejs">quoteShare.js website</a> for help.
 
 ### Options
 
@@ -58,12 +58,10 @@ The `quoteShare()` method accepts options, enabling you to customize when and ho
 
 | Option        | Date Type     | Default  | Description |
 | ------------- |-------------| ---|---|
-| backgroundColor      | string | '#55acee' | The color of the background of the Twitter icon. Default is Twitter's blue. Hex, RGB, and other color codes are accepted. |
-| birdColor      | string | '#ffffff' | The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted. |
-| maxLength      | number      |  114 | The maximum number of characters that must be highlighted for the share icon to appear. Default is 114 because shortened links require 23 characters, and quoteShare adds two quotes and a space to the highlighted text (114+23+2+1=140). |
-| minLength      | number      |  1 | The minimum number of characters that must be highlighted for the share icon to appear. |
-| shareIcon | string      |  '...' | The icon that appears next to the highlighted text. Default is Font Awesome's Twitter icon. You can add your own HTML, including images or other icons. |
-| size | number  |  24 | The size of the Twitter icon, in pixels. |
-
+| backgroundColor      | string | `'#262626'` | The background color of the popup menu. Default is off-black. Hex, RGB, and other color codes are accepted. |
+| colorTwitter      | string | `'#ffffff'` | The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted. |
+| maxLength      | number      |  `114` | The maximum number of characters that must be highlighted for the share icon to appear. Default is 114 because shortened links require 23 characters, and quoteShare adds two quotes and a space to the highlighted text (114+23+2+1=140). |
+| minLength      | number      |  `1` | The minimum number of characters that must be highlighted for the share icon to appear. |
+| boxShadow | boolean      |  `true` | A shadow that appears below the menu. Set to false to disable. |
 
 
