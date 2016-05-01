@@ -152,6 +152,12 @@ $(document).ready(function(){
 						</thead>
 						<tbody>
 							<tr>
+								<td>animation</td>
+								<td>number</td>
+								<td><code>75</code></td>
+								<td>Speed of the animation, in milliseconds, with which the popup appears. Set to <code>0</code> to disable.</td>
+							</tr>
+							<tr>
 								<td>backgroundColor</td>
 								<td>string</td>
 								<td><code>'#55acee'</code></td>
@@ -254,6 +260,16 @@ $(document).ready(function(){
 });</code></pre>
 					<blockquote class="example-5">
 						DEMO: The tweet will include hashtags and a source.
+					</blockquote>
+					<h3>Example 6 - Modify the popup's animation speed</h3>
+					<p>
+						You can change the speed of the animation with which the popup appears. Set it to <code>0</code> to disable animation. <code>1000</code> equals 1 second. 
+					</p>
+					<pre><code class="language-javascript">$('.example-6').quoteShare({
+	animation : 0,
+});</code></pre>
+					<blockquote class="example-6">
+						DEMO: The popup will appear immediately, with no animation.
 					</blockquote>
 				</div>
 			</div>

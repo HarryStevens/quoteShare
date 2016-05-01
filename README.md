@@ -58,6 +58,7 @@ The `quoteShare()` method accepts options, enabling you to customize when and ho
 
 | Option        | Date Type     | Default  | Description |
 | ------------- |-------------| ---|---|
+| animation      | number | `75` | Speed of the animation, in milliseconds, with which the popup appears. Set to 0 to disable. |
 | backgroundColor      | string | `'#262626'` | The background color of the popup menu. Default is off-black. Hex, RGB, and other color codes are accepted. |
 | boxShadow | boolean      |  `true` | A shadow that appears below the menu. Set to false to disable. |
 | maxLength      | number      |  `114` | The maximum number of characters that must be highlighted for the share icon to appear. Useful if you want to add hashtags or a source to the tweet. |

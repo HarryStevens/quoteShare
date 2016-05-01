@@ -24,6 +24,9 @@ $(document).ready(function() {
 		twitterHashtags : 'jQuery, Twitter',
 		twitterVia : 'Harry_Stevens'
 	});
+	$('.example-6').quoteShare({
+		animation : 0,
+	});
 
 	//other functions
 	$('a[href^="#"]').on('click', function(e) {
