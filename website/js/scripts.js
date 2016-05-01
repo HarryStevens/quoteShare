@@ -1,9 +1,7 @@
 $(document).ready(function() {
 
 	//quoteShare examples
-	$('p.lead').quoteShare({
-		twitterVia : 'Harry_Stevens'
-	});
+	$('p.lead').quoteShare();
 
 	$('.example-1').quoteShare();
 
