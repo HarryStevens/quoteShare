@@ -24,10 +24,6 @@
 				var unique = $(this).context.offsetTop + '-' + $(this).context.offsetLeft;
 				var id = 'qs-popup-' + unique;
 
-				//some variables to be used later
-				var history = [];
-				var text = "";
-
 				//options
 				var settings = $.extend({
 					background : '#262626',
@@ -36,7 +32,8 @@
 					boxShadow : true,
 					twitterColor : '#ffffff',
 					twitterHashtags : '',
-					twitterVia : ''
+					twitterVia : '',
+					animation : 75,
 				}, options);
 
 				//create popup menus
@@ -96,7 +93,10 @@
 					'top' : '-10000px',
 					'left' : '-10000px'
 				};
-				$('#' + id).css(hidePopup).addClass('qs-popup-hidden').removeClass('qs-popup-shown');
+				$('#' + id).css(hidePopup).slideUp().addClass('qs-popup-hidden').removeClass('qs-popup-shown');
+				
+				// an empty text variable to be filled when the user highlights something
+				var text = "";
 
 				// mouseup function to show the popup
 				$(this).mouseup(function(e) {
@@ -116,16 +116,12 @@
 					// position the popup
 					var showPopup = {
 						'top' : top + scroll - 50,
-						'left' : mid - 37.5
+						'left' : mid - 20
 					};
 
-					// add the latest text to the history array, and get the array's length
-					history.push(text);
-					var historyLength = history.length;
-
 					// conditions to show the popup
-					if (len > settings.minLength && len < settings.maxLength && (text != history[historyLength - 2]) && selection.type == "Range") {
-						$('#' + id).css(showPopup).addClass('qs-popup-shown').removeClass('qs-popup-hidden');
+					if (len > settings.minLength && len < settings.maxLength && selection.type == "Range") {
+						$('#' + id).css(showPopup).slideDown(settings.animation).addClass('qs-popup-shown').removeClass('qs-popup-hidden');
 
 						var urlStart = 'http://twitter.com/share?text="' + text + '"';
 						var urlVia = '';
@@ -143,7 +139,7 @@
 
 						$('a.qs-twitter').attr('onclick', "popUp=window.open('" + shareTwitter + "','popupwindow','scrollbars=yes,width=600,height=250');popUp.focus();return false");
 					} else {
-						$('#' + id).css(hidePopup).addClass('qs-popup-hidden').removeClass('qs-popup-shown');
+						$('#' + id).css(hidePopup).slideUp().addClass('qs-popup-hidden').removeClass('qs-popup-shown');
 					}
 
 				});
@@ -153,7 +149,7 @@
 
 					if ($('#' + id).hasClass('qs-popup-shown')) {
 						setTimeout(function() {
-							$('#' + id).css(hidePopup).removeClass('qs-popup-shown').addClass('qs-popup-hidden');
+							$('#' + id).css(hidePopup).slideUp().removeClass('qs-popup-shown').addClass('qs-popup-hidden');
 						}, 200);
 
 					}
