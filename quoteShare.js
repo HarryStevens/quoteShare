@@ -124,7 +124,7 @@
 					};
 
 					// conditions to show the popup
-					if (len > settings.minLength && len < settings.maxLength && selection.type == "Range") {
+					if (len > settings.minLength && len < settings.maxLength) {
 						$('#' + id).css(showPopup).slideDown(settings.animation).addClass('qs-popup-shown').removeClass('qs-popup-hidden');
 
 						var urlStart = 'http://twitter.com/share?text="' + text + '"';
