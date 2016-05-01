@@ -94,7 +94,7 @@
 					'left' : '-10000px'
 				};
 				$('#' + id).css(hidePopup).slideUp().addClass('qs-popup-hidden').removeClass('qs-popup-shown');
-				
+
 				// an empty text variable to be filled when the user highlights something
 				var text = "";
 
@@ -113,6 +113,10 @@
 					var mid = (left + right) / 2
 					var scroll = $(window).scrollTop();
 
+					//clean up text - remove carriage returns and trim
+					var newText = text.replace(/(\r\n|\n|\r)/gm,"").trim();
+					var text = newText;
+
 					// position the popup
 					var showPopup = {
 						'top' : top + scroll - 50,
@@ -125,12 +129,12 @@
 
 						var urlStart = 'http://twitter.com/share?text="' + text + '"';
 						var urlVia = '';
-						var urlHashtags = ''; 
+						var urlHashtags = '';
 						var urlRelated = '';
 
 						if (settings.twitterVia != '') {
 							urlVia = '&amp;via=' + settings.twitterVia;
-						} 
+						}
 						if (settings.twitterHashtags != '') {
 							urlHashtags = '&amp;hashtags=' + settings.twitterHashtags;
 						}
