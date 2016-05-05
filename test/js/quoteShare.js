@@ -19,7 +19,6 @@
 		$.fn.quoteShare = function(options) {
 
 			return this.each(function() {
-				$('*').css('box-sizing', 'border-box');
 
 				//create unique ids for each menu so that each can be styled separately
 				var unique = $(this).context.offsetTop + '-' + $(this).context.offsetLeft;
@@ -27,14 +26,15 @@
 
 				//options
 				var settings = $.extend({
+					animation : 75,
 					background : '#262626',
-					minLength : 1,
-					maxLength : 114,
 					boxShadow : true,
+					elipses : true,
+					minLength : 1,
+					maxLength : 500,
 					twitterColor : '#ffffff',
 					twitterHashtags : '',
 					twitterVia : '',
-					animation : 75,
 				}, options);
 
 				//create popup menus
@@ -48,7 +48,8 @@
 					'width' : '40px',
 					'border-radius' : '4px',
 					'padding' : '9px',
-					'padding-top' : '10px'
+					'padding-top' : '10px',
+					'box-sizing' : 'border-box'
 				});
 
 				// box shadow
@@ -128,6 +129,61 @@
 					if (len > settings.minLength && len < settings.maxLength) {
 						$('#' + id).css(showPopup).slideDown(settings.animation).addClass('qs-popup-shown').removeClass('qs-popup-hidden');
 
+						//find out if you need to abridge the tweet
+						if (settings.elipses == true) {
+							//add two quotes to the text total
+							var textTotal = text.length + 2;
+
+							//find out how long your via string is
+							var viaLength = settings.twitterVia.length;
+
+							//find out how long the sum of our hashtag strings are
+							var hashtagsLength;
+							var hashtagsArray = (settings.twitterHashtags).split(',');
+							var hashtagsLengthArray = [];
+							for (var i = 0; i < hashtagsArray.length; i++) {
+
+								//each hash tag has a hash and a space before it
+								var currHash = ' #' + hashtagsArray[i].trim();
+								var currHashLength = currHash.length;
+								hashtagsLengthArray.push(currHashLength);
+
+							}
+							//get sum of hashtagsLength
+							var hashtagsTotal = 0;
+							$.each(hashtagsLengthArray, function() {
+								hashtagsTotal += this;
+							});
+
+							if (hashtagsTotal < 3) {
+								console.log('there are no hashtags');
+								hashtagsTotal = 0;
+							}
+
+							//find out how long the source string is
+							var viaTotal = 0;
+
+							if (viaLength > 0) {
+								//there's a source, so we add 8 characters for " via @"
+								viaTotal = viaLength + 6;
+							}
+
+							//add it all up and add 23 for the url
+
+							var tweetLength = textTotal + viaTotal + hashtagsTotal + 23;
+
+							//calculate the excess and trim the text if so
+							var excess = tweetLength - 140;
+							if (excess > 0) {
+								//there is some excess, so trim the text and add elipses
+								var abridge = text.substr(0, text.length - (excess + 3));
+
+								text = abridge + '...';
+
+							}
+						}
+
+						//create the url
 						var urlStart = 'http://twitter.com/share?text="' + text + '"';
 						var urlVia = '';
 						var urlHashtags = '';
