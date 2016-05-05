@@ -19,6 +19,8 @@
 		$.fn.quoteShare = function(options) {
 
 			return this.each(function() {
+				
+				$('*').css('box-sizing', 'border-box');
 
 				//create unique ids for each menu so that each can be styled separately
 				var unique = $(this).context.offsetTop + '-' + $(this).context.offsetLeft;
@@ -47,7 +49,7 @@
 					'width' : '40px',
 					'border-radius' : '4px',
 					'padding' : '9px',
-					'padding-top' : '11px'
+					'padding-top' : '10px'
 				});
 
 				// box shadow
@@ -114,7 +116,7 @@
 					var scroll = $(window).scrollTop();
 
 					//clean up text - remove carriage returns and trim
-					var newText = text.replace(/(\r\n|\n|\r)/gm,"").trim();
+					var newText = text.replace(/(\r\n|\n|\r)/gm, "").trim();
 					var text = newText;
 
 					// position the popup
