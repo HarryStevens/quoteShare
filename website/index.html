@@ -78,7 +78,7 @@
 						<p class="lead">
 							A jQuery plugin that lets you share highlighted text on Twitter.
 							<br>
-							Highlight this text to see it in action.
+							Highlight some or all of this text to see it in action.
 						</p>
 						<a href="#usage">
 						<button type="button" class="btn btn-danger btn-lg">
@@ -124,7 +124,8 @@
 $(document).ready(function(){
 	$('p').quoteShare();
 });
-&lt;/script&gt;</code></pre>																																																																																		
+&lt;/script&gt;</code></pre>																																																																																							
+
 
 
 				</div>
@@ -137,9 +138,8 @@ $(document).ready(function(){
 				<div class="container">
 
 					<p>
-						The <code class="language-javascript">
-							quoteShare()</code>
-						method accepts options, enabling you to customize when and how your share button displays on the page.
+						The
+						<code class="language-javascript">quoteShare()</code> method accepts options, enabling you to customize when and how your share button displays on the page.
 					</p>
 					<table class="table table-bordered table-striped">
 						<thead>
@@ -154,49 +154,65 @@ $(document).ready(function(){
 							<tr>
 								<td>animation</td>
 								<td>number</td>
-								<td><code>75</code></td>
-								<td>Speed of the animation, in milliseconds, with which the popup appears. Set to <code>0</code> to disable.</td>
+								<td><code>
+									75</code></td>
+								<td>Speed of the animation, in milliseconds, with which the popup appears. Set to <code>
+									0</code> to disable.</td>
 							</tr>
 							<tr>
 								<td>backgroundColor</td>
 								<td>string</td>
-								<td><code>'#55acee'</code></td>
+								<td><code>
+									'#55acee'</code></td>
 								<td>The color of the background of the Twitter icon. Default is Twitter's blue. Hex, RGB, and other color codes are accepted.</td>
 							</tr>
 							<tr>
 								<td>boxShadow</td>
 								<td>boolean</td>
-								<td><code>true</code></td>
-								<td>A shadow that appears below the menu. Set to false to disable.</td>
+								<td><code>
+									true</code></td>
+								<td>A shadow that appears below the menu. Set to <code>false</code> to disable.</td>
 							</tr>
 							<tr>
 								<td>maxLength</td>
 								<td>number</td>
-								<td><code>114</td>
-								<td>The maximum number of characters that must be highlighted for the share icon to appear. Useful if you want to add hashtags or a source to the tweet.</td>
+								<td><code>
+									500</td>
+								<td>The maximum number of characters that must be highlighted for the share icon to appear.</td>
 							</tr>
 							<tr>
 								<td>minLength</td>
 								<td>number</td>
-								<td><code>1</code></td>
+								<td><code>
+									1</code></td>
 								<td>The minimum number of characters that must be highlighted for the share icon to appear.</td>
 							</tr>
 							<tr>
 								<td>twitterColor</td>
 								<td>string</td>
-								<td><code>'#ffffff'</code></td>
+								<td><code>
+									'#ffffff'</code></td>
 								<td>The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted.</td>
+							</tr>
+							<tr>
+								<td>twtterElipses</td>
+								<td>boolean</td>
+								<td><code>
+									true</td>
+								<td>If the length of the tweet is 140 characters, quoteShare will abridge excessively long text and add an elipses. Set to <code>false</code> to disable.</td>
 							</tr>
 							<tr>
 								<td>twitterHashtags</td>
 								<td>string</td>
-								<td><code>''</code></td>
+								<td><code>
+									''</code></td>
 								<td>A comma separated list of hashtags that accompany the tweet.</td>
 							</tr>
 							<tr>
 								<td>twitterVia</td>
 								<td>string</td>
-								<td><code>''</code></td>
+								<td><code>
+									''</code></td>
 								<td>A Twitter handle to accompany the tweet.</td>
 							</tr>
 						</tbody>
@@ -252,7 +268,7 @@ $(document).ready(function(){
 					</blockquote>
 					<h3>Example 5 - Customize the tweet</h3>
 					<p>
-						You can add hashtags or a source Twitter handle to the tweet.  
+						You can add hashtags or a source Twitter handle to the tweet.
 					</p>
 					<pre><code class="language-javascript">$('.example-5').quoteShare({
 	twitterHashtags : 'jQuery, Twitter',
@@ -263,13 +279,31 @@ $(document).ready(function(){
 					</blockquote>
 					<h3>Example 6 - Modify the popup's animation speed</h3>
 					<p>
-						You can change the speed of the animation with which the popup appears. Set it to <code>0</code> to disable animation. <code>1000</code> equals 1 second. 
+						You can change the speed of the animation with which the popup appears. Set it to <code>
+							0</code>
+						to disable animation. <code>
+							1000</code>
+						equals 1 second.
 					</p>
 					<pre><code class="language-javascript">$('.example-6').quoteShare({
 	animation : 0,
 });</code></pre>
-					<blockquote class="example-6">
+					<blockquote class="example-7">
 						DEMO: The popup will appear immediately, with no animation.
+					</blockquote>
+<h3>Example 7 - Allow for very long tweets</h3>
+					<p>
+						You can change the speed of the animation with which the popup appears. Set it to <code>
+							0</code>
+						to disable animation. <code>
+							1000</code>
+						equals 1 second.
+					</p>
+					<pre><code class="language-javascript">$('.example-7').quoteShare({
+	twitterElipses : false,
+});</code></pre>
+					<blockquote class="example-7">
+						DEMO:  quoteShare can abridge excessively long text so that the tweet is 140 characters. However, if <code>twitterElipses</code> is set to <code>false</code>, the user will have to edit the tweet before sending it. If you highlight this entire block of text, you will see what happens when you set it to <code>false</code>. 
 					</blockquote>
 				</div>
 			</div>

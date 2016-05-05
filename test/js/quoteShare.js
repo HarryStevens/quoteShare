@@ -29,7 +29,7 @@
 					animation : 75,
 					background : '#262626',
 					boxShadow : true,
-					elipses : true,
+					twitterElipses : true,
 					minLength : 1,
 					maxLength : 500,
 					twitterColor : '#ffffff',
@@ -130,7 +130,7 @@
 						$('#' + id).css(showPopup).slideDown(settings.animation).addClass('qs-popup-shown').removeClass('qs-popup-hidden');
 
 						//find out if you need to abridge the tweet
-						if (settings.elipses == true) {
+						if (settings.twitterElipses == true) {
 							//add two quotes to the text total
 							var textTotal = text.length + 2;
 
@@ -168,14 +168,14 @@
 								viaTotal = viaLength + 6;
 							}
 
-							//add it all up and add 23 for the url
+							//add it all up and add 24 for the url plus a space
 
-							var tweetLength = textTotal + viaTotal + hashtagsTotal + 23;
+							var tweetLength = textTotal + viaTotal + hashtagsTotal + 24;
 
 							//calculate the excess and trim the text if so
 							var excess = tweetLength - 140;
 							if (excess > 0) {
-								//there is some excess, so trim the text and add elipses
+								//there is some excess, so trim the text and add twitterElipses
 								var abridge = text.substr(0, text.length - (excess + 3));
 
 								text = abridge + '...';

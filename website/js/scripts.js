@@ -26,6 +26,9 @@ $(document).ready(function() {
 	$('.example-6').quoteShare({
 		animation : 0,
 	});
+	$('.example-7').quoteShare({
+		twitterElipses : false,
+	});
 
 	//other functions
 	$('a[href^="#"]').on('click', function(e) {
