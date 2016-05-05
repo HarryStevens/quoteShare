@@ -149,6 +149,7 @@
 								hashtagsLengthArray.push(currHashLength);
 
 							}
+							
 							//get sum of hashtagsLength
 							var hashtagsTotal = 0;
 							$.each(hashtagsLengthArray, function() {
@@ -156,7 +157,7 @@
 							});
 
 							if (hashtagsTotal < 3) {
-								console.log('there are no hashtags');
+								//there are no hashtags
 								hashtagsTotal = 0;
 							}
 
