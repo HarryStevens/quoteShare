@@ -64,7 +64,7 @@ The `quoteShare()` method accepts options, enabling you to customize when and ho
 | maxLength      | number      |  `114` | The maximum number of characters that must be highlighted for the share icon to appear. Useful if you want to add hashtags or a source to the tweet. |
 | minLength      | number      |  `1` | The minimum number of characters that must be highlighted for the share icon to appear. |
 | twitterColor      | string | `'#ffffff'` | The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted. |
-| twtterElipses      | boolean | `true` | If the length of the tweet is 140 characters, quoteShare will abridge excessively long text and add an elipses. Set to `false` to disable. |
+| twtterElipses      | boolean | `true` | If the length of the tweet is 140 characters, quoteShare will abridge excessively long text and add an elipses. Works even if hashtags and a source are included in the tweet. Set to `false` to disable. |
 | twitterHashtags      | string | `''` | A comma separated list of hashtags that accompany the tweet. |
 | twitterVia      | string | `''` | A Twitter handle to accompany the tweet. |
 
