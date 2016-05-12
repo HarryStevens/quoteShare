@@ -16,18 +16,17 @@ $(document).ready(function() {
 	});
 
 	$('.example-4').quoteShare({
-		boxShadow : false,
-		twitterVia : 'Harry_Stevens'
+		boxShadow : false
 	});
 	$('.example-5').quoteShare({
 		twitterHashtags : 'jQuery, Twitter',
 		twitterVia : 'Harry_Stevens'
 	});
 	$('.example-6').quoteShare({
-		animation : 0,
+		animation : 0
 	});
 	$('.example-7').quoteShare({
-		twitterElipses : false,
+		twitterElipses : false
 	});
 
 	//other functions

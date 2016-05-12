@@ -29,10 +29,10 @@
 					animation : 75,
 					background : '#262626',
 					boxShadow : true,
-					twitterElipses : true,
 					minLength : 1,
 					maxLength : 500,
 					twitterColor : '#ffffff',
+					twitterElipses : true,
 					twitterHashtags : '',
 					twitterVia : '',
 				}, options);
