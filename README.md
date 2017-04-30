@@ -61,7 +61,7 @@ The `quoteShare()` method accepts options, enabling you to customize when and ho
 | animation      | number | `75` | Speed of the animation, in milliseconds, with which the popup appears. Set to `0` to disable. |
 | backgroundColor      | string | `'#262626'` | The background color of the popup menu. Default is off-black. Hex, RGB, and other color codes are accepted. |
 | boxShadow | boolean      |  `true` | A shadow that appears below the menu. Set to `false` to disable. |
-| maxLength      | number      |  `114` | The maximum number of characters that must be highlighted for the share icon to appear. Useful if you want to add hashtags or a source to the tweet. |
+| maxLength      | number      |  `500` | The maximum number of characters that can be highlighted for the share icon to appear. Useful if you want to add hashtags or a source to the tweet. |
 | minLength      | number      |  `1` | The minimum number of characters that must be highlighted for the share icon to appear. |
 | twitterColor      | string | `'#ffffff'` | The color of the bird in the Twitter icon. Default is white. Hex, RGB, and other color codes are accepted. |
 | twtterElipses      | boolean | `true` | If the length of the tweet is 140 characters, quoteShare will abridge excessively long text and add an elipses. Works even if hashtags and a source are included in the tweet. Set to `false` to disable. |
